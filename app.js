@@ -129,6 +129,45 @@ function submit() {
         }
     }
     if (auto == "1"){
+        const save_data = document.getElementById('save_data')
+        let present_grid = gridify(present, n);
+        let absent_grid = gridify(absent, n);
+        if (reverse == "1"){
+            let number_s = bezout(l, mino)
+            let number_l = (l - less(mino)*number_s)/(less(mino) + 1)
+            let output = [];
+            do {
+                output = algo_dlx_fix(present_grid, new Set(), mino, number_s, number_l);
+                if (output.length > 0){
+                    break
+                }
+                number_s += less(mino) + 1
+                number_l -= less(mino)
+            } while (number_l >= 0)
+            let result_aligned = align_output(output, present_grid, absent_grid)
+            save_data.style.display = 'block'
+            save_data.textContent = save(result_aligned)
+            save_data.style.display = 'none'
+            view_result(0)
+        } else {
+            let number_s = bezout(l, mino) + (less(mino) + 1)*Math.floor((l - less(mino)*bezout(l, mino))/(less(mino)*(less(mino) + 1)))
+            let number_l = (l - less(mino)*number_s)/(less(mino) + 1)
+            console.log(number_s)
+            let output = [];
+            do {
+                output = algo_dlx_fix(present_grid, new Set(), mino, number_s, number_l);
+                if (output.length > 0){
+                    break
+                }
+                number_s -= less(mino) + 1
+                number_l += less(mino)
+            } while (number_s >= 0)
+            let result_aligned = align_output(output, present_grid, absent_grid)
+            save_data.style.display = 'block'
+            save_data.textContent = save(result_aligned)
+            save_data.style.display = 'none'
+            view_result(0)
+        }
     } else {
         const save_data = document.getElementById('save_data')
         let present_grid = gridify(present, n);
