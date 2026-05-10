@@ -164,6 +164,7 @@ function save(output){
 }
 
 function load(str){
+    if (str == ""){return []} else {
     let list1 = str.split("/");
     let new_list = []
     for (let result of list1){
@@ -180,7 +181,7 @@ function load(str){
         }
         new_list.push(new_result)
     }
-    return new_list
+    return new_list}
 }
 
 function result_min(result){
