@@ -1,0 +1,162 @@
+body {
+    margin: 5px auto;
+    padding: 0px;
+    background: #fadcbb;
+}
+h1 {
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+    user-select: none;
+}
+.min_move_container {
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+    user-select: none;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(11, 40px);
+    grid-template-rows: repeat(11, 40px);
+}
+.space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #222;
+    margin: auto;
+    width: 35px ;
+    height: 35px;
+    background: #555
+}
+.present {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #383;
+    margin: auto;
+    width: 35px ;
+    height: 35px;
+    background: #7c7
+}
+.absent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ca2 ;
+    margin: auto;
+    width: 35px ;
+    height: 35px;
+    background: #ec4
+}
+input[type=radio] {
+    display: none;
+}
+input[type=radio]:checked + label {
+    background: #e64;
+}
+label {
+    display: block;
+    float: left;
+    margin: 10px;
+    width: 100px;
+    height: 60px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    justify-content:center;
+    cursor: pointer;
+    border: 2px solid #e64;
+    border-radius: 10px;
+}
+
+input[name='reverse']:disabled + label {
+    background: #aaa;
+    border: 2px solid #aaa;
+}
+
+input[type=button]:disabled {
+    background: #aaa;
+    border: 2px solid #aaa;
+}
+
+input[type=button] {
+    display: block;
+    float: left;
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    justify-content:center;
+    cursor: pointer;
+    color: #fff;
+    background: #e64;
+    border: 2px solid #e64;
+    border-radius: 10px;
+}
+.result_wrapper {
+    display: grid;
+}
+.vline {
+    background: #e21;
+    width: 5px;
+    height:50px;
+}
+.hline {
+    background: #e21;
+    width: 50px;
+    height:5px;
+}
+.vhline {
+    background: #e21;
+    width: 5px;
+    height:5px;
+}
+.seat {
+    display:table-cell;
+    float: left;
+    width: 50px;
+    height:50px;
+    background: #fff;
+    border: 2px solid #222;
+    text-align:center;
+    justify-content:center;
+    vertical-align:middle;
+    line-height:50px;
+}
+.btn {
+    color: #fff;
+    display:block;
+    float: left;
+    width: 50px;
+    height:50px;
+    text-align:center;
+    justify-content:center;
+    border-radius: 25px;
+}
+.button_wrapper {
+    display:grid;
+    grid-template-columns: 150px 150px 150px;
+    padding-top: 20px
+}
+fieldset {
+    height:180px;
+    border: 1px #111 solid;
+}

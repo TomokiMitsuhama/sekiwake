@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SEKIWAKE</title>
+        <link rel="stylesheet" href="./style.css" type="text/css"></link>
+    </head>
+    <body>
+        <header><h1>SEKIWAKE</h1></header>
+        <dialog><button autofocus>×</button>使い方説明</dialog>
+        <button style="position:absolute; top:20px; right:20px">HELP</button>
+        <div class="container" id="grid_container"></div>
+        <div class="container">
+            <input type="radio" name="mino" value="34" id="3-4" checked>
+            <label for="3-4">3-4</label>
+            <input type="radio" name="mino" value="45" id="4-5">
+            <label for="4-5">4-5</label>
+            <input type="radio" name="mino" value="56" id="5-6">
+            <label for="5-6">5-6</label>
+        </div>
+        <div class="container">
+            <fieldset id="min_move">
+                <legend><input type="radio" name="auto" value="1" id="auto_t" checked>
+                    <label for="auto_t">min move</label></legend>
+                <div class="container">
+                    <input type="radio" name="reverse" value="1" id="rev_t" checked>
+                    <label for="rev_t">less group</label>
+                    <input type="radio" name="reverse" value="0" id="rev_f" checked>
+                    <label for="rev_f">more group</label>
+                </div>
+            </fieldset>
+            <fieldset id="fix_ratio" disabled>
+                <legend><input type="radio" name="auto" value="0" id="auto_f">
+                    <label for="auto_f">fix ratio</label></legend>
+                <div class="container">
+                    <div style="margin:auto">
+                        <div id="mino_s">3:</div>
+                        <input type="number" value="0" step="4" min="0" max="0" id="number_s" style="width:30px"/>
+                    </div>
+                    <div style="margin:auto">
+                        <div id="mino_l">4:</div>
+                        <div id="number_l">0</div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="container">
+            <input type="button" class="execute" id="execute" value="実行" disabled>
+        </div>
+        <div class="container">
+            <div class="result_container" id="result_container">
+                <div class="result_wrapper" id="result_wrapper"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="button_container" id="button_container">
+                <div class="button_wrapper" id="button_wrapper"></div>
+            </div>
+        </div>
+        <div id="save_data" style="display:none"></div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
