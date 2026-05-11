@@ -59,11 +59,15 @@ $(function(){
             var auto_bool = $('input[name=\"auto\"]:checked').val()
             if (l==0){isDisabled = true}
             if (auto_bool == '1'){
-                $('#min_move').prop('disabled', false)
-                $('#fix_ratio').prop('disabled', true)
+                $('#min_move').removeClass('is-disabled')
+                $('#fix_ratio').addClass('is-disabled')
+                $('input[name="reverse"]').prop('disabled', false)
+                $('#number_s').prop('disabled', true)
             } else {
-                $('#min_move').prop('disabled', true)
-                $('#fix_ratio').prop('disabled', false)
+                $('#min_move').addClass('is-disabled')
+                $('#fix_ratio').removeClass('is-disabled')
+                $('input[name="reverse"]').prop('disabled', true)
+                $('#number_s').prop('disabled', false)
             }
             $('#mino_s').text(less(option).toString() + ':');
             $('#mino_l').text((less(option) + 1).toString() + ':');
@@ -73,7 +77,8 @@ $(function(){
             $('#number_l').text((l - number_s*less(option))/(less(option) + 1));
             if(number_s*less(option) > l){
                 isDisabled = true
-                $('#fix_ratio').prop('disabled', true)
+                $('#fix_ratio').addClass('is-disabled')
+                $('#number_s').prop('disabled', true)
             } else {
                 $('#number_s').attr('max', (number_s + (l - number_s*less(option))/less(option)).toString());
             }

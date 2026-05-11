@@ -65,14 +65,17 @@ h1 {
     background: #ec4
 }
 input[type=radio] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
 }
 input[type=radio]:checked + label {
     background: #e64;
 }
 label {
-    display: block;
-    float: left;
+    display: inline-flex;
+    align-items: center;
     margin: 10px;
     width: 100px;
     height: 60px;
@@ -85,6 +88,16 @@ label {
     border-radius: 10px;
 }
 
+.mode-legend {
+    display: block;
+    padding: 0 4px;
+}
+
+.mode-fieldset.is-disabled {
+    opacity: 0.65;
+}
+
+.mode-fieldset.is-disabled .container label,
 input[name='reverse']:disabled + label {
     background: #aaa;
     border: 2px solid #aaa;
